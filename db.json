@@ -7,7 +7,7 @@
       "color": "Black/White",
       "size": 10,
       "price": 150,
-      "image": "https://example.com/nike_air_max_270.jpg"
+      "image": "https://kicksculture.netlify.app/assets/1-fc587c05.webp"
     },
     {
       "id": 2,
@@ -16,7 +16,7 @@
       "color": "White/Black",
       "size": 9,
       "price": 180,
-      "image": "https://example.com/adidas_ultra_boost.jpg"
+      "image": "https://kicksculture.netlify.app/assets/2-b8722338.jpg"
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "color": "Blue/Yellow",
       "size": 11,
       "price": 110,
-      "image": "https://example.com/puma_rsx.jpg"
+      "image": "https://kicksculture.netlify.app/assets/3-47fc9d76.jpg"
     },
     {
       "id": 4,
@@ -34,7 +34,7 @@
       "color": "All White",
       "size": 10,
       "price": 90,
-      "image": "https://example.com/nike_air_force_1.jpg"
+      "image": "https://kicksculture.netlify.app/assets/5-8c8ea81d.jpg"
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "color": "Black",
       "size": 8,
       "price": 130,
-      "image": "https://example.com/adidas_nmd_r1.jpg"
+      "image": "https://kicksculture.netlify.app/assets/6-0beb35e9.webp"
     },
     {
       "id": 6,
@@ -52,7 +52,7 @@
       "color": "Gray/Blue",
       "size": 12,
       "price": 160,
-      "image": "https://example.com/nike_react_infinity_run.jpg"
+      "image": "https://kicksculture.netlify.app/assets/7-76360cb1.jpg"
     },
     {
       "id": 7,
@@ -232,7 +232,7 @@
       "color": "Black",
       "size": 9,
       "price": 75,
-      "image": "https://example.com/puma_vikky.jpg"
+      "image": "https://kicksculture.netlify.app/assets/1-fc587c05.webp"
     },
     {
       "id": 27,
@@ -241,7 +241,7 @@
       "color": "Gray",
       "size": 11,
       "price": 120,
-      "image": "https://example.com/adidas_x_plr.jpg"
+      "image": "https://kicksculture.netlify.app/assets/2-b8722338.jpg"
     },
     {
       "id": 28,
@@ -250,7 +250,7 @@
       "color": "Black/Red",
       "size": 10,
       "price": 190,
-      "image": "https://example.com/nike_vapormax.jpg"
+      "image": "https://kicksculture.netlify.app/assets/3-47fc9d76.jpg"
     },
     {
       "id": 29,
@@ -259,7 +259,7 @@
       "color": "White/Blue",
       "size": 9,
       "price": 110,
-      "image": "https://example.com/puma_lqd_cell.jpg"
+      "image": "https://kicksculture.netlify.app/assets/4-051772e0.webp"
     },
     {
       "id": "c76b",
