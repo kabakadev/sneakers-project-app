@@ -61,7 +61,7 @@
       "color": "Red/White",
       "size": 9,
       "price": 85,
-      "image": "https://example.com/puma_clyde.jpg"
+      "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/364669/01/dt01/fnd/PNA/fmt/png/Clyde-Core-Foil-Men's-Sneakers"
     },
     {
       "id": 8,
@@ -70,7 +70,7 @@
       "color": "Green",
       "size": 10,
       "price": 100,
-      "image": "https://example.com/adidas_gazelle.jpg"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWmZncsCvprGpkSeVJnX4HlzBL9gRTfmp5RA&s"
     },
     {
       "id": 9,
@@ -79,7 +79,7 @@
       "color": "Black",
       "size": 11,
       "price": 95,
-      "image": "https://example.com/nike_blazer_mid.jpg"
+      "image": "https://static.nike.com/a/images/t_default/a751495d-1cb9-4976-ab4f-9a2189464e8f/W+BLAZER+MID+%2777+NEXT+NATURE.png"
     },
     {
       "id": 10,
@@ -88,7 +88,7 @@
       "color": "White",
       "size": 9,
       "price": 70,
-      "image": "https://example.com/puma_basket_classic.jpg"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsTcrPOUC0hO8_rH6JWR-cZRS175Gv51qyHw&s"
     },
     {
       "id": 11,
@@ -97,7 +97,7 @@
       "color": "Neon Green",
       "size": 11,
       "price": 250,
-      "image": "https://example.com/nike_zoomx_vaporfly.jpg"
+      "image": "https://static.nike.com/a/images/t_default/87e1a107-173c-4c79-b111-7e3f4b03504e/NIKE+ZOOMX+VAPORFLY+NEXT%25+3.png"
     },
     {
       "id": 12,
@@ -106,7 +106,7 @@
       "color": "Black/White",
       "size": 9,
       "price": 220,
-      "image": "https://example.com/adidas_yeezy_boost_350.jpg"
+      "image": "https://images.stockx.com/images/adidas-Yeezy-Boost-350-V2-Onyx-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&auto=compress&dpr=2&trim=color&updated_at=1656420652&fm=avif&q=60"
     },
     {
       "id": 13,
@@ -115,7 +115,7 @@
       "color": "Pink",
       "size": 10,
       "price": 90,
-      "image": "https://example.com/puma_future_rider.jpg"
+      "image": "https://kicksculture.netlify.app/assets/6-0beb35e9.webp"
     },
     {
       "id": 14,
@@ -124,7 +124,7 @@
       "color": "Blue/White",
       "size": 8,
       "price": 120,
-      "image": "https://example.com/nike_dunk_low.jpg"
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQGT5Cz1Q6CsSceUIia6leX4v9C_LakibfYA&s"
     },
     {
       "id": 15,
@@ -133,7 +133,7 @@
       "color": "White/Green",
       "size": 11,
       "price": 85,
-      "image": "https://example.com/adidas_stan_smith.jpg"
+      "image": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/8b9f0b3fb4af47259912aa9b010d82db_9366/M20324_07_standard.jpg"
     },
     {
       "id": 16,
@@ -142,7 +142,7 @@
       "color": "Black/Red",
       "size": 10,
       "price": 130,
-      "image": "https://example.com/puma_thunder_spectra.jpg"
+      "image": "https://kicksculture.netlify.app/assets/7-76360cb1.jpg"
     },
     {
       "id": 17,
@@ -151,7 +151,7 @@
       "color": "Red/Black",
       "size": 10,
       "price": 160,
-      "image": "https://example.com/nike_air_jordan_1.jpg"
+      "image": "https://kicksculture.netlify.app/assets/3-47fc9d76.jpg"
     },
     {
       "id": 18,
@@ -160,7 +160,7 @@
       "color": "White/Red",
       "size": 9,
       "price": 80,
-      "image": "https://example.com/adidas_continental_80.jpg"
+      "image": "https://kicksculture.netlify.app/assets/8-0e487786.webp"
     },
     {
       "id": 19,
@@ -169,7 +169,7 @@
       "color": "Blue",
       "size": 10,
       "price": 75,
-      "image": "https://example.com/puma_suede_classic.jpg"
+      "image": "https://kicksculture.netlify.app/assets/5-8c8ea81d.jpg"
     },
     {
       "id": 20,
@@ -178,17 +178,9 @@
       "color": "White/Red",
       "size": 8,
       "price": 140,
-      "image": "https://example.com/nike_air_max_90.jpg"
+      "image": "https://kicksculture.netlify.app/assets/4-051772e0.webp"
     },
-    {
-      "id": 21,
-      "brand": "Adidas",
-      "model": "Trefoil Hoodie",
-      "color": "Black",
-      "size": "M",
-      "price": 65,
-      "image": "https://example.com/adidas_trefoil_hoodie.jpg"
-    },
+
     {
       "id": 22,
       "brand": "Nike",
@@ -196,7 +188,7 @@
       "color": "White/Black",
       "size": 10,
       "price": 80,
-      "image": "https://example.com/nike_cortez.jpg"
+      "image": "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/a29e735f-6b9f-44a3-ae99-1f0da7ff39b4/W+NIKE+CORTEZ+23+PREMIUM.png"
     },
     {
       "id": 23,
@@ -205,7 +197,7 @@
       "color": "Neon Green",
       "size": 11,
       "price": 120,
-      "image": "https://example.com/puma_cell_alien.jpg"
+      "image": "https://kicksculture.netlify.app/assets/7-76360cb1.jpg"
     },
     {
       "id": 24,
@@ -214,7 +206,7 @@
       "color": "Black/White",
       "size": 10,
       "price": 140,
-      "image": "https://example.com/adidas_eqt_support.jpg"
+      "image": "https://kicksculture.netlify.app/assets/8-0e487786.webp"
     },
     {
       "id": 25,
@@ -223,7 +215,7 @@
       "color": "Pink/White",
       "size": 8,
       "price": 110,
-      "image": "https://example.com/nike_air_huarache.jpg"
+      "image": "https://kicksculture.netlify.app/assets/9-f46a6644.webp"
     },
     {
       "id": 26,
@@ -260,14 +252,6 @@
       "size": 9,
       "price": 110,
       "image": "https://kicksculture.netlify.app/assets/4-051772e0.webp"
-    },
-    {
-      "id": "c76b",
-      "name": "ghost",
-      "restaurant": "ghostTown",
-      "image": "https://plus.unsplash.com/premium_photo-1694708455249-992010f9db32?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "rating": 9,
-      "comment": "a real classic!"
     }
   ]
 }

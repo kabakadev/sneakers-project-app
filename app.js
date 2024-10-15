@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
       data.forEach((Obj) => {
         images = document.createElement("img");
         images.src = Obj.image;
+        images.classList.add("w-full", "h-auto", "object-cover");
+        console.log(images.classList);
         div.appendChild(images);
       })
     );
