@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sneaker Showcase</title>
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <header class="bg-blue-500 text-white p-4 text-center">
+      <h1 class="text-xl font-bold">Sneaker Showcase</h1>
+    </header>
+
+    <nav class="text-center mt-4">
+      <button class="bg-blue-500 text-white px-4 py-2" data-page="home">
+        Home
+      </button>
+      <button class="bg-blue-500 text-white px-4 py-2" data-page="sneakers">
+        Sneakers
+      </button>
+      <button class="bg-blue-500 text-white px-4 py-2" data-page="favorites">
+        Favorites
+      </button>
+    </nav>
+
+    <main class="p-4">
+      <section id="home-section" class="hidden">
+        <h2 class="text-2xl font-semibold mb-4">Welcome to Sneaker Showcase</h2>
+        <p>
+          Browse our collection of sneakers and filter by price, brand, and
+          more.
+        </p>
+      </section>
+
+      <section id="sneakers-section" class="hidden">
+        <h2 class="text-2xl font-semibold mb-4">Sneaker Collection</h2>
+        <div id="sneaker-grid" class="grid grid-cols-2 gap-4">
+          <!-- Sneaker cards will go here -->
+        </div>
+      </section>
+
+      <section id="favorites-section" class="hidden">
+        <h2 class="text-2xl font-semibold mb-4">Favorite Sneakers</h2>
+        <p>Your favorite sneakers will appear here.</p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

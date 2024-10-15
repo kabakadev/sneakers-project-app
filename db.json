@@ -1,0 +1,273 @@
+{
+  "sneakers": [
+    {
+      "id": 1,
+      "brand": "Nike",
+      "model": "Air Max 270",
+      "color": "Black/White",
+      "size": 10,
+      "price": 150,
+      "image": "https://example.com/nike_air_max_270.jpg"
+    },
+    {
+      "id": 2,
+      "brand": "Adidas",
+      "model": "Ultra Boost",
+      "color": "White/Black",
+      "size": 9,
+      "price": 180,
+      "image": "https://example.com/adidas_ultra_boost.jpg"
+    },
+    {
+      "id": 3,
+      "brand": "Puma",
+      "model": "RS-X",
+      "color": "Blue/Yellow",
+      "size": 11,
+      "price": 110,
+      "image": "https://example.com/puma_rsx.jpg"
+    },
+    {
+      "id": 4,
+      "brand": "Nike",
+      "model": "Air Force 1",
+      "color": "All White",
+      "size": 10,
+      "price": 90,
+      "image": "https://example.com/nike_air_force_1.jpg"
+    },
+    {
+      "id": 5,
+      "brand": "Adidas",
+      "model": "NMD R1",
+      "color": "Black",
+      "size": 8,
+      "price": 130,
+      "image": "https://example.com/adidas_nmd_r1.jpg"
+    },
+    {
+      "id": 6,
+      "brand": "Nike",
+      "model": "React Infinity Run",
+      "color": "Gray/Blue",
+      "size": 12,
+      "price": 160,
+      "image": "https://example.com/nike_react_infinity_run.jpg"
+    },
+    {
+      "id": 7,
+      "brand": "Puma",
+      "model": "Clyde",
+      "color": "Red/White",
+      "size": 9,
+      "price": 85,
+      "image": "https://example.com/puma_clyde.jpg"
+    },
+    {
+      "id": 8,
+      "brand": "Adidas",
+      "model": "Gazelle",
+      "color": "Green",
+      "size": 10,
+      "price": 100,
+      "image": "https://example.com/adidas_gazelle.jpg"
+    },
+    {
+      "id": 9,
+      "brand": "Nike",
+      "model": "Blazer Mid",
+      "color": "Black",
+      "size": 11,
+      "price": 95,
+      "image": "https://example.com/nike_blazer_mid.jpg"
+    },
+    {
+      "id": 10,
+      "brand": "Puma",
+      "model": "Basket Classic",
+      "color": "White",
+      "size": 9,
+      "price": 70,
+      "image": "https://example.com/puma_basket_classic.jpg"
+    },
+    {
+      "id": 11,
+      "brand": "Nike",
+      "model": "ZoomX Vaporfly NEXT%",
+      "color": "Neon Green",
+      "size": 11,
+      "price": 250,
+      "image": "https://example.com/nike_zoomx_vaporfly.jpg"
+    },
+    {
+      "id": 12,
+      "brand": "Adidas",
+      "model": "Yeezy Boost 350",
+      "color": "Black/White",
+      "size": 9,
+      "price": 220,
+      "image": "https://example.com/adidas_yeezy_boost_350.jpg"
+    },
+    {
+      "id": 13,
+      "brand": "Puma",
+      "model": "Future Rider",
+      "color": "Pink",
+      "size": 10,
+      "price": 90,
+      "image": "https://example.com/puma_future_rider.jpg"
+    },
+    {
+      "id": 14,
+      "brand": "Nike",
+      "model": "Dunk Low",
+      "color": "Blue/White",
+      "size": 8,
+      "price": 120,
+      "image": "https://example.com/nike_dunk_low.jpg"
+    },
+    {
+      "id": 15,
+      "brand": "Adidas",
+      "model": "Stan Smith",
+      "color": "White/Green",
+      "size": 11,
+      "price": 85,
+      "image": "https://example.com/adidas_stan_smith.jpg"
+    },
+    {
+      "id": 16,
+      "brand": "Puma",
+      "model": "Thunder Spectra",
+      "color": "Black/Red",
+      "size": 10,
+      "price": 130,
+      "image": "https://example.com/puma_thunder_spectra.jpg"
+    },
+    {
+      "id": 17,
+      "brand": "Nike",
+      "model": "Air Jordan 1",
+      "color": "Red/Black",
+      "size": 10,
+      "price": 160,
+      "image": "https://example.com/nike_air_jordan_1.jpg"
+    },
+    {
+      "id": 18,
+      "brand": "Adidas",
+      "model": "Continental 80",
+      "color": "White/Red",
+      "size": 9,
+      "price": 80,
+      "image": "https://example.com/adidas_continental_80.jpg"
+    },
+    {
+      "id": 19,
+      "brand": "Puma",
+      "model": "SUEDE Classic",
+      "color": "Blue",
+      "size": 10,
+      "price": 75,
+      "image": "https://example.com/puma_suede_classic.jpg"
+    },
+    {
+      "id": 20,
+      "brand": "Nike",
+      "model": "Air Max 90",
+      "color": "White/Red",
+      "size": 8,
+      "price": 140,
+      "image": "https://example.com/nike_air_max_90.jpg"
+    },
+    {
+      "id": 21,
+      "brand": "Adidas",
+      "model": "Trefoil Hoodie",
+      "color": "Black",
+      "size": "M",
+      "price": 65,
+      "image": "https://example.com/adidas_trefoil_hoodie.jpg"
+    },
+    {
+      "id": 22,
+      "brand": "Nike",
+      "model": "Cortez",
+      "color": "White/Black",
+      "size": 10,
+      "price": 80,
+      "image": "https://example.com/nike_cortez.jpg"
+    },
+    {
+      "id": 23,
+      "brand": "Puma",
+      "model": "Cell Alien",
+      "color": "Neon Green",
+      "size": 11,
+      "price": 120,
+      "image": "https://example.com/puma_cell_alien.jpg"
+    },
+    {
+      "id": 24,
+      "brand": "Adidas",
+      "model": "EQT Support",
+      "color": "Black/White",
+      "size": 10,
+      "price": 140,
+      "image": "https://example.com/adidas_eqt_support.jpg"
+    },
+    {
+      "id": 25,
+      "brand": "Nike",
+      "model": "Air Huarache",
+      "color": "Pink/White",
+      "size": 8,
+      "price": 110,
+      "image": "https://example.com/nike_air_huarache.jpg"
+    },
+    {
+      "id": 26,
+      "brand": "Puma",
+      "model": "Vikky",
+      "color": "Black",
+      "size": 9,
+      "price": 75,
+      "image": "https://example.com/puma_vikky.jpg"
+    },
+    {
+      "id": 27,
+      "brand": "Adidas",
+      "model": "X_PLR",
+      "color": "Gray",
+      "size": 11,
+      "price": 120,
+      "image": "https://example.com/adidas_x_plr.jpg"
+    },
+    {
+      "id": 28,
+      "brand": "Nike",
+      "model": "Vapormax",
+      "color": "Black/Red",
+      "size": 10,
+      "price": 190,
+      "image": "https://example.com/nike_vapormax.jpg"
+    },
+    {
+      "id": 29,
+      "brand": "Puma",
+      "model": "LQD CELL",
+      "color": "White/Blue",
+      "size": 9,
+      "price": 110,
+      "image": "https://example.com/puma_lqd_cell.jpg"
+    },
+    {
+      "id": "c76b",
+      "name": "ghost",
+      "restaurant": "ghostTown",
+      "image": "https://plus.unsplash.com/premium_photo-1694708455249-992010f9db32?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "rating": 9,
+      "comment": "a real classic!"
+    }
+  ]
+}
