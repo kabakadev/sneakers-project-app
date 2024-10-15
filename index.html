@@ -3,17 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sneakers Collection</title>
+    <title>Sneaker Collection</title>
     <link rel="stylesheet" href="./src/output.css" />
   </head>
-
   <body class="bg-gray-100">
-    <h1 class="text-3x1 font-bold text-center my-4">Sneakers</h1>
-    <p class="text-blue-100">testing if this works</p>
-    <div
-      id="images"
-      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4"
-    ></div>
+    <div class="max-w-7xl mx-auto p-4">
+      <div class="mb-6">
+        <label for="price-filter" class="block text-lg font-semibold mb-2">
+          Filter by Price:
+        </label>
+        <div class="space-x-4">
+          <div>
+            <span>min</span>
+            <input
+              id="min-price"
+              type="number"
+              placeholder="Min Price"
+              class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+            />
+          </div>
+
+          <div>-</div>
+          <span>max</span>
+          <div>
+            <input
+              id="max-price"
+              type="number"
+              placeholder="Max Price"
+              class="px-3 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="sneaker-grid"
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      ></div>
+    </div>
+
     <script src="./app.js"></script>
   </body>
 </html>
