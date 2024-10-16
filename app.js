@@ -75,4 +75,9 @@ document.addEventListener("DOMContentLoaded", () => {
       filterSneakers();
     });
   });
+  priceInput.forEach((input) => {
+    input.addEventListener("input", () => {
+      console.log(input);
+    });
+  });
 });
