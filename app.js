@@ -3,14 +3,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const rangePrices = document.querySelectorAll(".range-input input");
   const progressBar = document.querySelector(".slider .progress");
   console.log(rangePrices);
+
+  let priceGap = 100;
   rangePrices.forEach((newInput) => {
-    newInput.addEventListener("input", () => {
+    newInput.addEventListener("input", (e) => {
       // console.log(rangePrices);
       let minVal = parseInt(rangePrices[0].value);
       let maxVal = parseInt(rangePrices[1].value);
 
-      progressBar.style.left = (minVal / rangePrices[0].max) * 100 + "%";
-      progressBar.style.right = 100 - (maxVal / rangePrices[1].max) * 100 + "%";
+      if (maxVal - minVal < priceGap) {
+        if (e.target.className === "range-min") {
+          //if active slider is min slider
+          rangePrices[0].value = maxVal - priceGap;
+        } else {
+          rangePrices[1].value = maxVal + priceGap;
+        }
+      } else {
+        progressBar.style.left = (minVal / rangePrices[0].max) * 100 + "%";
+        progressBar.style.right =
+          100 - (maxVal / rangePrices[1].max) * 100 + "%";
+      }
     });
   });
 
