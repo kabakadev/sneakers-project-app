@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(rangePrices);
       let minVal = parseInt(rangePrices[0].value);
       let maxVal = parseInt(rangePrices[1].value);
+
+      console.log(minVal, maxVal);
     });
   });
 
