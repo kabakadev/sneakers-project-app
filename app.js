@@ -77,7 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   priceInput.forEach((input) => {
     input.addEventListener("input", () => {
-      console.log(input);
+      console.log(input.value);
+      let minVal = parseInt(priceInput[0].value);
+      let maxVal = parseInt(priceInput[1].value);
     });
   });
 });
