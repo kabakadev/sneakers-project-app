@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* #range-min::-webkit-slider-thumb,
-#range-max::-webkit-slider-thumb {
+/* input[type="range"]#range-min::-webkit-slider-thumb,
+input[type="range"]#range-max::-webkit-slider-thumb {
   height: 17px;
   width: 17px;
   border-radius: 50%;
@@ -12,8 +12,8 @@
   background: lightblue;
 }
 
-#range-min::-moz-range-thumb,
-#range-max::-moz-range-thumb {
+input[type="range"]#range-min::-moz-range-thumb,
+input[type="range"]#range-max::-moz-range-thumb {
   height: 17px;
   width: 17px;
   border-radius: 50%;
