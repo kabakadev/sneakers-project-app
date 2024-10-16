@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   let sneakerGrid = document.querySelector("#sneaker-grid");
   const rangePrices = document.querySelectorAll(".range-input input");
+  const progressBar = document.querySelector(".slider .progress");
   console.log(rangePrices);
   rangePrices.forEach((newInput) => {
     newInput.addEventListener("input", () => {
@@ -8,8 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let minVal = parseInt(rangePrices[0].value);
       let maxVal = parseInt(rangePrices[1].value);
 
-      console.log(rangePrices[0].max);
-      let percent = (minVal / rangePrices[0].max) * 100;
+      progressBar.style.left = (minVal / rangePrices[0].max) * 100 + "%";
       console.log(percent);
     });
   });
