@@ -1,16 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   let sneakerGrid = document.querySelector("#sneaker-grid");
-  const filterButton = document.getElementById("filter-button");
-  const minPriceInput = document.getElementById("min-price-filter");
-  const maxPriceInput = document.getElementById("max-price-filter");
-
-  let sneakers = [];
 
   fetch("http://localhost:3000/sneakers")
     .then((res) => res.json())
     .then((data) => {
-      sneakers = data;
-      displaySneakers(sneakers);
+      displaySneakers(data);
     });
 
   function displaySneakers(sneakers) {
