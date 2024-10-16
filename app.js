@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   let sneakerGrid = document.querySelector("#sneaker-grid");
+  const rangePrices = document.querySelectorAll(".range-input input");
+  console.log(rangePrices);
+  rangePrices.forEach((newInput) => {
+    newInput.addEventListener("input", () => {
+      console.log(rangePrices);
+      let minVal = parseInt(rangePrices[0].value);
+      let maxVal = parseInt(rangePrices[1].value);
+    });
+  });
 
   fetch("http://localhost:3000/sneakers")
     .then((res) => res.json())
