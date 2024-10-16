@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log(rangePrices);
   rangePrices.forEach((newInput) => {
     newInput.addEventListener("input", () => {
-      console.log(rangePrices);
+      // console.log(rangePrices);
       let minVal = parseInt(rangePrices[0].value);
       let maxVal = parseInt(rangePrices[1].value);
 
       progressBar.style.left = (minVal / rangePrices[0].max) * 100 + "%";
-      console.log(percent);
+      progressBar.style.right = 100 - (maxVal / rangePrices[1].max) * 100 + "%";
     });
   });
 
