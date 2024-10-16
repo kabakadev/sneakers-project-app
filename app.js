@@ -5,19 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let sneakerData = [];
   console.log(rangePrices);
 
-  rangePrices.forEach((newInput) => {
-    newInput.addEventListener("input", () => {
-      // console.log(rangePrices);
-      let minVal = parseInt(rangePrices[0].value);
-      let maxVal = parseInt(rangePrices[1].value);
-      priceInput[0].value = minVal;
-      priceInput[1].value = maxVal;
-
-      // progressBar.style.left = (minVal / rangePrices[0].max) * 100 + "%";
-      // progressBar.style.right = 100 - (maxVal / rangePrices[1].max) * 100 + "%";
-    });
-  });
-
   fetch("http://localhost:3000/sneakers")
     .then((res) => res.json())
     .then((data) => {
@@ -62,15 +49,28 @@ document.addEventListener("DOMContentLoaded", () => {
       sneakerItem.appendChild(details);
       sneakerGrid.appendChild(sneakerItem);
     });
-    function filterSneakers() {
-      console.log(typeof priceInput[0].value);
-      const minPrice = parseInt(priceInput[0].value);
-      const maxPrice = parseInt(priceInput[1].value);
-
-      const filteredSneakers = sneakerData.filter(
-        (sneaker) => sneaker.price >= minPrice && sneaker.price <= maxPrice
-      );
-    }
-    filterSneakers();
   }
+  function filterSneakers() {
+    console.log(typeof priceInput[0].value);
+    const minPrice = parseInt(priceInput[0].value);
+    const maxPrice = parseInt(priceInput[1].value);
+
+    const filteredSneakers = sneakerData.filter(
+      (sneaker) => sneaker.price >= minPrice && sneaker.price <= maxPrice
+    );
+    displaySneakers(filteredSneakers);
+  }
+  rangePrices.forEach((newInput) => {
+    newInput.addEventListener("input", () => {
+      // console.log(rangePrices);
+      let minVal = parseInt(rangePrices[0].value);
+      let maxVal = parseInt(rangePrices[1].value);
+      priceInput[0].value = minVal;
+      priceInput[1].value = maxVal;
+
+      // progressBar.style.left = (minVal / rangePrices[0].max) * 100 + "%";
+      // progressBar.style.right = 100 - (maxVal / rangePrices[1].max) * 100 + "%";
+      filterSneakers();
+    });
+  });
 });
