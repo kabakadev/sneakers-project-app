@@ -6,7 +6,7 @@
       "model": "Air Max 270",
       "color": "Black/White",
       "size": 10,
-      "price": 150,
+      "price": 250,
       "image": "https://kicksculture.netlify.app/assets/1-fc587c05.webp"
     },
     {
@@ -15,7 +15,7 @@
       "model": "Ultra Boost",
       "color": "White/Black",
       "size": 9,
-      "price": 180,
+      "price": 380,
       "image": "https://kicksculture.netlify.app/assets/2-b8722338.jpg"
     },
     {
@@ -33,7 +33,7 @@
       "model": "Air Force 1",
       "color": "All White",
       "size": 10,
-      "price": 90,
+      "price": 190,
       "image": "https://kicksculture.netlify.app/assets/5-8c8ea81d.jpg"
     },
     {
@@ -51,7 +51,7 @@
       "model": "React Infinity Run",
       "color": "Gray/Blue",
       "size": 12,
-      "price": 160,
+      "price": 460,
       "image": "https://kicksculture.netlify.app/assets/7-76360cb1.jpg"
     },
     {
@@ -60,7 +60,7 @@
       "model": "Clyde",
       "color": "Red/White",
       "size": 9,
-      "price": 85,
+      "price": 585,
       "image": "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_2000,h_2000/global/364669/01/dt01/fnd/PNA/fmt/png/Clyde-Core-Foil-Men's-Sneakers"
     },
     {
@@ -87,7 +87,7 @@
       "model": "Basket Classic",
       "color": "White",
       "size": 9,
-      "price": 70,
+      "price": 670,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsTcrPOUC0hO8_rH6JWR-cZRS175Gv51qyHw&s"
     },
     {
@@ -96,7 +96,7 @@
       "model": "ZoomX Vaporfly NEXT%",
       "color": "Neon Green",
       "size": 11,
-      "price": 250,
+      "price": 550,
       "image": "https://static.nike.com/a/images/t_default/87e1a107-173c-4c79-b111-7e3f4b03504e/NIKE+ZOOMX+VAPORFLY+NEXT%25+3.png"
     },
     {
@@ -105,7 +105,7 @@
       "model": "Yeezy Boost 350",
       "color": "Black/White",
       "size": 9,
-      "price": 220,
+      "price": 120,
       "image": "https://images.stockx.com/images/adidas-Yeezy-Boost-350-V2-Onyx-Product.jpg?fit=fill&bg=FFFFFF&w=140&h=75&auto=compress&dpr=2&trim=color&updated_at=1656420652&fm=avif&q=60"
     },
     {
@@ -114,7 +114,7 @@
       "model": "Future Rider",
       "color": "Pink",
       "size": 10,
-      "price": 90,
+      "price": 190,
       "image": "https://kicksculture.netlify.app/assets/6-0beb35e9.webp"
     },
     {
@@ -123,7 +123,7 @@
       "model": "Dunk Low",
       "color": "Blue/White",
       "size": 8,
-      "price": 120,
+      "price": 220,
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQGT5Cz1Q6CsSceUIia6leX4v9C_LakibfYA&s"
     },
     {
@@ -132,7 +132,7 @@
       "model": "Stan Smith",
       "color": "White/Green",
       "size": 11,
-      "price": 85,
+      "price": 185,
       "image": "https://assets.adidas.com/images/w_1880,f_auto,q_auto/8b9f0b3fb4af47259912aa9b010d82db_9366/M20324_07_standard.jpg"
     },
     {
@@ -150,7 +150,7 @@
       "model": "Air Jordan 1",
       "color": "Red/Black",
       "size": 10,
-      "price": 160,
+      "price": 260,
       "image": "https://kicksculture.netlify.app/assets/3-47fc9d76.jpg"
     },
     {
@@ -159,7 +159,7 @@
       "model": "Continental 80",
       "color": "White/Red",
       "size": 9,
-      "price": 80,
+      "price": 280,
       "image": "https://kicksculture.netlify.app/assets/8-0e487786.webp"
     },
     {
@@ -196,7 +196,7 @@
       "model": "Cell Alien",
       "color": "Neon Green",
       "size": 11,
-      "price": 120,
+      "price": 420,
       "image": "https://kicksculture.netlify.app/assets/7-76360cb1.jpg"
     },
     {
@@ -205,7 +205,7 @@
       "model": "EQT Support",
       "color": "Black/White",
       "size": 10,
-      "price": 140,
+      "price": 340,
       "image": "https://kicksculture.netlify.app/assets/8-0e487786.webp"
     },
     {
@@ -214,7 +214,7 @@
       "model": "Air Huarache",
       "color": "Pink/White",
       "size": 8,
-      "price": 110,
+      "price": 510,
       "image": "https://kicksculture.netlify.app/assets/9-f46a6644.webp"
     },
     {
@@ -223,7 +223,7 @@
       "model": "Vikky",
       "color": "Black",
       "size": 9,
-      "price": 75,
+      "price": 175,
       "image": "https://kicksculture.netlify.app/assets/1-fc587c05.webp"
     },
     {

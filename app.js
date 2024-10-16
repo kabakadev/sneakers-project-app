@@ -55,6 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const minPrice = parseInt(priceInput[0].value);
     const maxPrice = parseInt(priceInput[1].value);
 
+    sneakerGrid.innerHTML = "";
+
     const filteredSneakers = sneakerData.filter(
       (sneaker) => sneaker.price >= minPrice && sneaker.price <= maxPrice
     );
