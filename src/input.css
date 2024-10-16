@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* #range-min::-webkit-slider-thumb,
+#range-max::-webkit-slider-thumb {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  background: lightblue;
+}
+
+#range-min::-moz-range-thumb,
+#range-max::-moz-range-thumb {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  pointer-events: auto;
+  -moz-appearance: none;
+  background: lightblue;
+} */

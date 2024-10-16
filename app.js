@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function displaySneakers(sneakers) {
     sneakers.forEach((sneaker) => {
       const sneakerItem = document.createElement("div");
-      sneakerItem.classList.add("sneaker-item", "border", "p-4", "rounded");
+      sneakerItem.classList.add("border", "p-4", "rounded");
 
       const image = document.createElement("img");
       image.src = sneaker.image;
