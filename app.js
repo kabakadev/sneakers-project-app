@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
       let minVal = parseInt(rangePrices[0].value);
       let maxVal = parseInt(rangePrices[1].value);
 
-      console.log(minVal, maxVal);
+      console.log(rangePrices[0].max);
+      let percent = (minVal / rangePrices[0].max) * 100;
+      console.log(percent);
     });
   });
 
