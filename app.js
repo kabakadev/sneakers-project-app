@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let sneakerGrid = document.querySelector("#sneaker-grid");
   const rangePrices = document.querySelectorAll(".range-input input");
   const priceInput = document.querySelectorAll(".price-input input");
-  const progressBar = document.querySelector(".slider .progress");
+  let sneakerData = [];
   console.log(rangePrices);
 
   rangePrices.forEach((newInput) => {
@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch("http://localhost:3000/sneakers")
     .then((res) => res.json())
     .then((data) => {
-      displaySneakers(data);
+      sneakerData = data;
+      displaySneakers(sneakerData);
     });
 
   function displaySneakers(sneakers) {
@@ -61,5 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
       sneakerItem.appendChild(details);
       sneakerGrid.appendChild(sneakerItem);
     });
+    function filterSneakers() {
+      console.log(typeof priceInput[0].value);
+      const minPrice = parseInt(priceInput[0].value);
+      const maxPrice = parseInt(priceInput[1].value);
+
+      const filteredSneakers = sneakerData.filter(
+        (sneaker) => sneaker.price >= minPrice && sneaker.price <= maxPrice
+      );
+    }
+    filterSneakers();
   }
 });
