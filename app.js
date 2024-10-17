@@ -54,6 +54,10 @@ document.addEventListener("DOMContentLoaded", () => {
       price.textContent = `Price: $${sneaker.price}`;
       price.classList.add("text-sm", "text-center", "font-semibold");
 
+      const button = document.createElement("button");
+      button.textContent = "Wishlist";
+      button.classList.add("bg-blue-500 text-white text-center px-4 py-2 ");
+
       details.appendChild(brandModel);
       details.appendChild(color);
       details.appendChild(size);
