@@ -91,6 +91,14 @@ document.addEventListener("DOMContentLoaded", () => {
       sneakerGrid.appendChild(sneakerItem);
     });
   }
+  function showSneakerDetails(sneaker) {
+    const sneakerSecDetails = document.querySelector("#sneaker-details");
+    const sneakerSecImages = document.querySelector("#sneaker-image");
+    const sneakerSecBrand = document.querySelector("sneaker-brand");
+    const sneakerSecColor = document.querySelector("sneaker-color");
+    const sneakerSecSize = docume.querySelector("sneaker-size");
+    const sneakerSecPrice = document.querySelector("sneaker-price");
+  }
   function updateWishlist(sneaker) {
     const wishlistGrid = document.getElementById("wishlit-grid");
     // console.log(sneaker);
