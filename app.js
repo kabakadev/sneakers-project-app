@@ -56,12 +56,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const button = document.createElement("button");
       button.textContent = "Wishlist";
-      button.classList.add("bg-blue-500 text-white text-center px-4 py-2 ");
+      button.classList.add(
+        "bg-blue-500",
+        "text-white",
+        "text-center",
+        "px-4",
+        "py-2"
+      );
 
       details.appendChild(brandModel);
       details.appendChild(color);
       details.appendChild(size);
       details.appendChild(price);
+      details.appendChild(button);
 
       sneakerItem.appendChild(image);
       sneakerItem.appendChild(details);
