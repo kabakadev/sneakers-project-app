@@ -745,6 +745,26 @@ input[type="range"]::-moz-range-thumb {
   background: lightblue;
 }
 
+.dropdown {
+  min-width: 15em;
+  position: relative;
+  margin: 2em;
+}
+
+.dropdown * {
+  box-sizing: border-box;
+}
+
+.select {
+  background: #fff;
+  color: rgb(67, 67, 67);
+  border: 2px solid #fff;
+  border-radius: 0.5em;
+  padding: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
 @media (min-width: 640px) {
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
