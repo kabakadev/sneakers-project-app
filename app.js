@@ -137,5 +137,13 @@ document.addEventListener("DOMContentLoaded", () => {
   showHomeSection.addEventListener("click", (e) => {
     e.preventDefault();
     console.log(e);
+    home.classList.remove("hidden");
+    wishlist.classList.add("hidden");
+  });
+  showWishListSection.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(e);
+    wishlist.classList.remove("hidden");
+    home.classList.add("hidden");
   });
 });
