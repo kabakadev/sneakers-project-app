@@ -163,7 +163,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .active {
-  background: #f00;
+  background: #999;
 }
 
 .menu-open {
