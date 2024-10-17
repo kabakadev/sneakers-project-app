@@ -93,11 +93,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   function showSneakerDetails(sneaker) {
     const sneakerSecDetails = document.querySelector("#sneaker-details");
-    const sneakerSecImages = document.querySelector("#sneaker-image");
+    const sneakerSecImage = document.querySelector("#sneaker-image");
     const sneakerSecBrand = document.querySelector("sneaker-brand");
     const sneakerSecColor = document.querySelector("sneaker-color");
     const sneakerSecSize = docume.querySelector("sneaker-size");
     const sneakerSecPrice = document.querySelector("sneaker-price");
+
+    sneakerSecImage.src = sneaker.image;
+    sneakerSecBrand.textContent = sneaker.brand;
+    sneakerSecColor.textContent = sneaker.color;
+    sneakerSecSize.textContent = sneaker.size;
+    sneakerSecPrice.textContent = sneaker.price;
   }
   function updateWishlist(sneaker) {
     const wishlistGrid = document.getElementById("wishlit-grid");
