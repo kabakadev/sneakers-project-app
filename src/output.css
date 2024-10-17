@@ -763,6 +763,9 @@ input[type="range"]::-moz-range-thumb {
 .select {
   background: #fff;
   color: rgb(67, 67, 67);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 2px solid #fff;
   border-radius: 0.5em;
   padding: 1em;
@@ -783,7 +786,7 @@ input[type="range"]::-moz-range-thumb {
   height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 6px solid transparent;
+  border-top: 6px solid black;
   transition: 0.3s;
 }
 

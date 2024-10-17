@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let sneakerGrid = document.querySelector("#sneaker-grid");
   const rangePrices = document.querySelectorAll(".range-input input");
   const priceInput = document.querySelectorAll(".price-input input");
+  //dropdown
+  const dropDown = document.querySelector(".dropdown");
+  const select = dropDown.querySelector(".select");
+  const caret = dropDown.querySelector(".caret");
+  const menu = dropDown.querySelector(".menu");
+  const options = dropDown.querySelectorAll(".menu li");
   let sneakerData = [];
   console.log(rangePrices);
 
