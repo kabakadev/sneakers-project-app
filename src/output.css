@@ -765,6 +765,31 @@ input[type="range"]::-moz-range-thumb {
   transition: background 0.3s;
 }
 
+.select-clicked {
+  border: 2px solid #fff;
+}
+
+.select:hover {
+  background: rgba(241, 240, 240, 0.847);
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid transparent;
+  transition: 0.3s;
+}
+
+.caret-rotate {
+  transform: rotate(180deg);
+}
+
+.menu {
+  list-style: none;
+}
+
 @media (min-width: 640px) {
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
