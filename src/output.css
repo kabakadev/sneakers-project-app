@@ -682,6 +682,12 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+a.active {
+  font-weight: 800;
+  color: #fcfcfc;
+  background-color: inherit;
+}
+
 .wrapper {
   width: 400px;
   background: #fff;
@@ -865,11 +871,6 @@ input[type="range"]::-moz-range-thumb {
 .menu-open {
   display: block;
   opacity: 1;
-}
-
-.hover\:text-gray-200:hover {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-300:hover {

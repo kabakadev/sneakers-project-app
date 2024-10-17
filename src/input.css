@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+a.active {
+  font-weight: 800;
+  color: #fcfcfc;
+  background-color: inherit;
+}
+
 .wrapper {
   width: 400px;
   background: #fff;
