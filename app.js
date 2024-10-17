@@ -88,14 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   function updateWishlist(sneaker) {
-    const wishlistGrid = document.getElementById("wishlist-section");
-
+    const wishlistGrid = document.getElementById("wishlit-grid");
+    // console.log(sneaker);
     const wishlistItem = document.createElement("div");
     wishlistItem.classList.add("border", "p-4", "rounded");
 
     const image = document.createElement("img");
     image.src = sneaker.image;
     image.classList.add("w-full", "h-auto", "object-cover", "rounded");
+    console.log(image);
 
     const details = document.createElement("div");
     details.classList.add("mt-4", "flex", "flex-col", "items-center");
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.createElement("button");
     button.textContent = "Remove";
     button.classList.add(
-      "bg-red-400",
+      "bg-red-300",
       "text-white",
       "text-center",
       "text-sm",
