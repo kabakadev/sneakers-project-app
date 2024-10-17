@@ -33,22 +33,32 @@
         <div class="flex flex-col space-y-4 items-start">
           <div class="wrapper">
             <header>
-              <p class="text-sm">price range</p>
+              <p class="text-sm font-semibold mb-2">price range</p>
             </header>
-            <div class="price-input">
-              <div class="field">
-                <span>Min</span>
-                <input type="number" class="input-min" value="100" />
+            <div class="price-input flex items-center">
+              <div class="field mr-2">
+                <label>Min</label>
+                <input
+                  type="number"
+                  class="input-min text-xs p-1 w-20"
+                  value="100"
+                />
               </div>
-              <div class="separator">-</div>
-              <div class="field">
-                <span>Max</span>
-                <input type="number" class="input-max" value="700" />
+              <div class="separator text-sm">-</div>
+              <div class="field ml-2">
+                <label>Max</label>
+                <input
+                  type="number"
+                  class="input-max text-xs p-1 w-20"
+                  value="700"
+                />
               </div>
             </div>
           </div>
-          <div class="dropdown">
-            <div class="select">
+          <div class="dropdown w-full">
+            <div
+              class="select p-2 text-sm border rounded cursor-pointer bg-gray-50"
+            >
               <span class="selected">Brand</span>
               <div class="caret"></div>
             </div>
