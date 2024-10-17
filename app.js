@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const sneakerId = sneaker.id;
         if (!wishlistItem.includes(sneakerId)) {
           wishlistItem.push(sneakerId);
+          updateWishlist(sneaker);
           console.log("succeeded");
         }
       });
@@ -87,16 +88,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   function updateWishlist(sneaker) {
-    const wishlistGrid = document.getElementById("wishlist-grid");
+    const wishlistGrid = document.getElementById("wishlist-section");
 
     const wishlistItem = document.createElement("div");
 
     const image = document.createElement("img");
-    image.src = sneaker.imgage;
+    image.src = sneaker.image;
     image.classList.add("w-full", "h-auto", "object-cover", "rounded");
 
     wishlistItem.appendChild(image);
-    wishlistGrid.appendChild(wishlist);
+    wishlistGrid.appendChild(wishlistItem);
   }
   function filterSneakers() {
     console.log(typeof priceInput[0].value);
