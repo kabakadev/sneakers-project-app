@@ -72,22 +72,20 @@
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
       ></div>
     </section>
-    <section>
-      <div id="sneaker-details" class="hidden p-4 border rounded bg-white">
-        <h3 class="text-lg font-bold">More about this sneaker</h3>
-        <div class="flex flex-col items-center">
-          <img
-            src=""
-            id="sneaker-image"
-            class="w-full h-auto object-cover rounded"
-          />
-          <p id="sneaker-brand"></p>
-          <p id="sneaker-color"></p>
-          <p id="sneaker-size"></p>
-          <p id="sneaker-price"></p>
-        </div>
+    <div id="sneaker-details" class="hidden p-4 border rounded bg-white">
+      <h3 class="text-lg font-bold">More about this sneaker</h3>
+      <div class="flex flex-col items-center">
+        <img
+          src=""
+          id="sneaker-image"
+          class="w-28 h-auto object-cover rounded"
+        />
+        <p id="sneaker-brand" class="font-bold"></p>
+        <p id="sneaker-color" class="text-gray-800"></p>
+        <p id="sneaker-size" class="text-gray-500"></p>
+        <p id="sneaker-price" class="font-bold"></p>
       </div>
-    </section>
+    </div>
 
     <script src="./app.js"></script>
   </body>

@@ -10,6 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const options = dropDown.querySelectorAll(".menu li");
   const selected = dropDown.querySelector(".selected");
 
+  //sneakersection
+  const sneakerSecDetails = document.querySelector("#sneaker-details");
+
   //section
   const home = document.querySelector("#home-section");
   const wishlist = document.querySelector("#wishlist-section");
@@ -79,7 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "mt-4"
       );
       image.addEventListener("click", () => {
-        const sneakerSecDetails = document.querySelector("#sneaker-details");
         sneakerSecDetails.classList.remove("hidden");
         wishlist.classList.add("hidden");
         home.classList.add("hidden");
@@ -217,10 +219,12 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(e);
     home.classList.remove("hidden");
     wishlist.classList.add("hidden");
+    sneakerSecDetails.classList.add("hidden");
   });
   showWishListSection.addEventListener("click", (e) => {
     e.preventDefault();
     wishlist.classList.remove("hidden");
     home.classList.add("hidden");
+    sneakerSecDetails.classList.add("hidden");
   });
 });
