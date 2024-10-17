@@ -583,6 +583,10 @@ video {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .gap-6 {
   gap: 1.5rem;
 }
@@ -747,6 +751,7 @@ input[type="range"]::-moz-range-thumb {
 
 .dropdown {
   min-width: 15em;
+  max-width: 20em;
   position: relative;
   margin: 2em;
 }

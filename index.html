@@ -8,49 +8,50 @@
     <link rel="stylesheet" href="./src/input.css" />
   </head>
   <body class="bg-gray-100">
-    <div class="max-w-7xl mx-auto p-4">
-      <div class="wrapper">
-        <header>
-          <h2>Price Range</h2>
-          <p>Use slider or enter min and max price</p>
-        </header>
-        <div class="price-input">
-          <div class="field">
-            <span>Min</span>
-            <input type="number" class="input-min" value="100" />
+    <div class="grid grid-cols-2">
+      <div class="max-w-7xl mx-auto p-4">
+        <div class="wrapper">
+          <header>
+            <h2>Price Range</h2>
+            <p>Use slider or enter min and max price</p>
+          </header>
+          <div class="price-input">
+            <div class="field">
+              <span>Min</span>
+              <input type="number" class="input-min" value="100" />
+            </div>
+            <div class="separator">-</div>
+            <div class="field">
+              <span>Max</span>
+              <input type="number" class="input-max" value="700" />
+            </div>
           </div>
-          <div class="separator">-</div>
-          <div class="field">
-            <span>Max</span>
-            <input type="number" class="input-max" value="700" />
+          <div class="slider">
+            <div class="progress"></div>
+          </div>
+          <div class="range-input">
+            <input type="range" class="range-min" min="0" max="100" value="0" />
+            <input
+              type="range"
+              class="range-max"
+              min="110"
+              max="700"
+              value="700"
+            />
           </div>
         </div>
-        <div class="slider">
-          <div class="progress"></div>
-        </div>
-        <div class="range-input">
-          <input type="range" class="range-min" min="0" max="100" value="0" />
-          <input
-            type="range"
-            class="range-max"
-            min="110"
-            max="700"
-            value="700"
-          />
+        <div class="dropdown">
+          <div class="select">
+            <span class="selected">Brand</span>
+            <div class="caret"></div>
+          </div>
+          <ul class="menu">
+            <li>Nike</li>
+            <li>Puma</li>
+            <li class="activw">Adidas</li>
+          </ul>
         </div>
       </div>
-      <div class="dropdown">
-        <div class="select">
-          <span class="selected">Brand</span>
-          <div class="caret"></div>
-        </div>
-        <ul class="menu">
-          <li>Nike</li>
-          <li>Puma</li>
-          <li class="activw">Adidas</li>
-        </ul>
-      </div>
-
       <div
         id="sneaker-grid"
         class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"

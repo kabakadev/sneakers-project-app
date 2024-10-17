@@ -95,6 +95,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .dropdown {
   min-width: 15em;
+  max-width: 20em;
   position: relative;
   margin: 2em;
 }
