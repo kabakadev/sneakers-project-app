@@ -126,4 +126,10 @@ document.addEventListener("DOMContentLoaded", () => {
       filterByBrand();
     });
   });
+
+  //section
+  const home = document.querySelector("#home-section");
+  const wishlist = document.querySelector("#wishlist-section");
+  const showHomeSection = document.querySelector("[href=#]");
+  const showWishListSection = document.querySelector("[href=#wishlist]");
 });
