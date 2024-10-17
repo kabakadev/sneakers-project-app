@@ -91,10 +91,31 @@ document.addEventListener("DOMContentLoaded", () => {
     const wishlistGrid = document.getElementById("wishlist-section");
 
     const wishlistItem = document.createElement("div");
+    wishlistItem.classList.add("border", "p-4", "rounded");
 
     const image = document.createElement("img");
     image.src = sneaker.image;
     image.classList.add("w-full", "h-auto", "object-cover", "rounded");
+
+    const details = document.createElement("div");
+    details.classList.add("mt-4", "flex", "flex-col", "items-center");
+
+    const brandModel = document.createElement("p");
+    brandModel.textContent = `${sneaker.brand} - ${sneaker.model}`;
+    brandModel.classList.add("font-bold", "text-lg", "text-center");
+
+    const button = document.createElement("button");
+    button.textContent = "Remove";
+    button.classList.add(
+      "bg-red-400",
+      "text-white",
+      "text-center",
+      "text-sm",
+      "rounded",
+      "px-2",
+      "py-1",
+      "mt-4"
+    );
 
     wishlistItem.appendChild(image);
     wishlistGrid.appendChild(wishlistItem);
