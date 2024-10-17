@@ -10,6 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const options = dropDown.querySelectorAll(".menu li");
   const selected = dropDown.querySelector(".selected");
 
+  //section
+  const home = document.querySelector("#home-section");
+  const wishlist = document.querySelector("#wishlist-section");
+  const showHomeSection = document.querySelector("a[href='#']");
+  const showWishListSection = document.querySelector("a[href='#wishlist']");
+
   select.addEventListener("click", () => {
     select.classList.toggle("select-clicked");
     caret.classList.toggle("caret-rotate");
@@ -33,7 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const image = document.createElement("img");
       image.src = sneaker.image;
-      image.classList.add("w-full", "h-auto", "object-cover", "rounded");
+      image.classList.add(
+        "w-full",
+        "h-auto",
+        "object-cover",
+        "rounded",
+        "cursor-pointer"
+      );
 
       const details = document.createElement("div");
       details.classList.add("mt-4", "flex", "flex-col", "items-center");
@@ -66,19 +78,28 @@ document.addEventListener("DOMContentLoaded", () => {
         "py-1",
         "mt-4"
       );
+      image.addEventListener("click", () => {
+        const sneakerSecDetails = document.querySelector("#sneaker-details");
+        sneakerSecDetails.classList.remove("hidden");
+        wishlist.classList.add("hidden");
+        home.classList.add("hidden");
+        showSneakerDetails(sneaker);
+      });
 
       button.addEventListener("click", () => {
         const sneakerId = sneaker.id;
         if (!wishlistItem.includes(sneakerId)) {
           wishlistItem.push(sneakerId);
-          button.classList.remove("bg-blue-300");
+          button.classList.remove("bg-blue-300", "pointer-cursor");
           button.classList.add("bg-gray-300");
           updateWishlist(sneaker);
           console.log("succeeded");
         } else {
-          button.classList.add("bg-gray -300");
+          button.classList.remove("pointer-cursor");
         }
       });
+
+      // sneakerItem.addEventListener("click");
 
       details.appendChild(brandModel);
       details.appendChild(color);
@@ -92,13 +113,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   function showSneakerDetails(sneaker) {
-    const sneakerSecDetails = document.querySelector("#sneaker-details");
     const sneakerSecImage = document.querySelector("#sneaker-image");
-    const sneakerSecBrand = document.querySelector("sneaker-brand");
-    const sneakerSecColor = document.querySelector("sneaker-color");
-    const sneakerSecSize = docume.querySelector("sneaker-size");
-    const sneakerSecPrice = document.querySelector("sneaker-price");
+    const sneakerSecBrand = document.querySelector("#sneaker-brand");
+    const sneakerSecColor = document.querySelector("#sneaker-color");
+    const sneakerSecSize = document.querySelector("#sneaker-size");
+    const sneakerSecPrice = document.querySelector("#sneaker-price");
 
+    if (!sneakerSecImage) {
+      console.error("sneakerSecImage element not found!");
+      return;
+    }
     sneakerSecImage.src = sneaker.image;
     sneakerSecBrand.textContent = sneaker.brand;
     sneakerSecColor.textContent = sneaker.color;
@@ -186,12 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
       filterByBrand();
     });
   });
-
-  //section
-  const home = document.querySelector("#home-section");
-  const wishlist = document.querySelector("#wishlist-section");
-  const showHomeSection = document.querySelector("a[href='#']");
-  const showWishListSection = document.querySelector("a[href='#wishlist']");
 
   home.classList.remove("hidden");
   showHomeSection.addEventListener("click", (e) => {
