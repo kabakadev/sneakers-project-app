@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image.classList.add("w-full", "h-auto", "object-cover", "rounded");
 
       const details = document.createElement("div");
-      details.classList.add("mt-4");
+      details.classList.add("mt-4", "flex", "flex-col", "items-center");
 
       const brandModel = document.createElement("p");
       brandModel.textContent = `${sneaker.brand} - ${sneaker.model}`;
@@ -57,11 +57,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const button = document.createElement("button");
       button.textContent = "Wishlist";
       button.classList.add(
-        "bg-blue-500",
+        "bg-blue-300",
         "text-white",
         "text-center",
-        "px-4",
-        "py-2"
+        "text-sm",
+        "rounded",
+        "px-2",
+        "py-1",
+        "mt-4"
       );
 
       details.appendChild(brandModel);
