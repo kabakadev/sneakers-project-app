@@ -8,6 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const caret = dropDown.querySelector(".caret");
   const menu = dropDown.querySelector(".menu");
   const options = dropDown.querySelectorAll(".menu li");
+  const selected = dropDown.querySelector(".selected");
+
+  select.addEventListener("click", () => {
+    select.classList.toggle("select-clicked");
+    caret.classList.toggle("caret-rotate");
+    menu.classList.toggle("menu-open");
+  });
+
   let sneakerData = [];
   console.log(rangePrices);
 
