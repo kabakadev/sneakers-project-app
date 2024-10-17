@@ -86,6 +86,18 @@ document.addEventListener("DOMContentLoaded", () => {
       sneakerGrid.appendChild(sneakerItem);
     });
   }
+  function updateWishlist(sneaker) {
+    const wishlistGrid = document.getElementById("wishlist-grid");
+
+    const wishlistItem = document.createElement("div");
+
+    const image = document.createElement("img");
+    image.src = sneaker.imgage;
+    image.classList.add("w-full", "h-auto", "object-cover", "rounded");
+
+    wishlistItem.appendChild(image);
+    wishlistGrid.appendChild(wishlist);
+  }
   function filterSneakers() {
     console.log(typeof priceInput[0].value);
     const minPrice = parseInt(priceInput[0].value);
