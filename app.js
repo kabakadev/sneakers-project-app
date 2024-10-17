@@ -104,6 +104,15 @@ document.addEventListener("DOMContentLoaded", () => {
       filterSneakers();
     });
   });
+  function filterByBrand() {
+    console.log(selected.innerText);
+    const brandFilter = sneakerData.filter(
+      (sneaker) => sneaker.brand === selected.innerText
+    );
+    sneakerGrid.innerHTML = "";
+    displaySneakers(brandFilter);
+  }
+
   options.forEach((option) => {
     option.addEventListener("click", () => {
       selected.innerText = option.innerText;
@@ -116,11 +125,5 @@ document.addEventListener("DOMContentLoaded", () => {
       option.classList.add("active");
     });
   });
-  function filterByBrand() {
-    const brandFilter = sneakerData.filter(
-      (sneaker) => sneaker.brand === selected.innerText
-    );
-    sneakerGrid.innerHTML = "";
-    displaySneakers(brandFilter);
-  }
+  filterByBrand();
 });
