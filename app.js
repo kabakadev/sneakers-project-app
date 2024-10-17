@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
           updateWishlist(sneaker);
           console.log("succeeded");
         } else {
-          button.classList.add("bg-gray-300");
+          button.classList.add("bg-gray -300");
         }
       });
 
@@ -94,8 +94,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateWishlist(sneaker) {
     const wishlistGrid = document.getElementById("wishlit-grid");
     // console.log(sneaker);
-    const wishlistItem = document.createElement("div");
-    wishlistItem.classList.add("border", "p-4", "rounded");
+    const wishItem = document.createElement("div");
+    wishItem.classList.add("border", "p-4", "rounded");
 
     const image = document.createElement("img");
     image.src = sneaker.image;
@@ -122,15 +122,15 @@ document.addEventListener("DOMContentLoaded", () => {
       "mt-4"
     );
     button.addEventListener("click", () => {
-      wishlistItem.remove();
+      wishItem.remove();
     });
 
     details.appendChild(brandModel);
     details.appendChild(button);
 
-    wishlistItem.appendChild(image);
-    wishlistItem.appendChild(details);
-    wishlistGrid.appendChild(wishlistItem);
+    wishItem.appendChild(image);
+    wishItem.appendChild(details);
+    wishlistGrid.appendChild(wishItem);
   }
   function filterSneakers() {
     console.log(typeof priceInput[0].value);
