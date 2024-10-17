@@ -80,6 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(input.value);
       let minVal = parseInt(priceInput[0].value);
       let maxVal = parseInt(priceInput[1].value);
+
+      if (minVal >= rangePrices[0].min && minVal <= rangePrices[0].max) {
+        rangePrices[0].value = minVal;
+      }
+      if (maxVal >= rangePrices[1].min && maxVal <= rangePrices[1].max) {
+        rangePrices[1].value = maxVal;
+      }
+      filterSneakers();
     });
   });
 });
