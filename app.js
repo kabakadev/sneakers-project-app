@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   let sneakerGrid = document.querySelector("#sneaker-grid");
-  const rangePrices = document.querySelectorAll(".range-input input");
+
   const priceInput = document.querySelectorAll(".price-input input");
   //dropdown
   const dropDown = document.querySelector(".dropdown");
@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //store sneakers here
   let sneakerData = [];
   let wishlistItem = [];
-  console.log(rangePrices);
 
   fetch("http://localhost:3000/sneakers")
     .then((res) => res.json())
@@ -99,31 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     displaySneakers(filteredSneakers);
   }
-  rangePrices.forEach((newInput) => {
-    newInput.addEventListener("input", () => {
-      // console.log(rangePrices);
-      let minVal = parseInt(rangePrices[0].value);
-      let maxVal = parseInt(rangePrices[1].value);
-      priceInput[0].value = minVal;
-      priceInput[1].value = maxVal;
 
-      // progressBar.style.left = (minVal / rangePrices[0].max) * 100 + "%";
-      // progressBar.style.right = 100 - (maxVal / rangePrices[1].max) * 100 + "%";
-      filterSneakers();
-    });
-  });
   priceInput.forEach((input) => {
     input.addEventListener("input", () => {
-      console.log(input.value);
-      let minVal = parseInt(priceInput[0].value);
-      let maxVal = parseInt(priceInput[1].value);
-
-      if (minVal >= rangePrices[0].min && minVal <= rangePrices[0].max) {
-        rangePrices[0].value = minVal;
-      }
-      if (maxVal >= rangePrices[1].min && maxVal <= rangePrices[1].max) {
-        rangePrices[1].value = maxVal;
-      }
       filterSneakers();
     });
   });
