@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   //store sneakers here
   let sneakerData = [];
+  let wishlistItem = [];
   console.log(rangePrices);
 
   fetch("http://localhost:3000/sneakers")
@@ -66,6 +67,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "py-1",
         "mt-4"
       );
+
+      button.addEventListener("click", () => {
+        const sneakerId = sneaker.id;
+        if (!wishlistItem.includes(sneakerId)) {
+          wishlistItem.push(sneakerId);
+          console.log("succeeded");
+        }
+      });
 
       details.appendChild(brandModel);
       details.appendChild(color);
