@@ -104,4 +104,23 @@ document.addEventListener("DOMContentLoaded", () => {
       filterSneakers();
     });
   });
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      selected.innerText = option.innerText;
+      select.classList.remove("select-clicked");
+      caret.classList.remove("caret-rotate");
+      menu.classList.remove("menu-open");
+      options.forEach((option) => {
+        option.classList.remove("active");
+      });
+      option.classList.add("active");
+    });
+  });
+  function filterByBrand() {
+    const brandFilter = sneakerData.filter(
+      (sneaker) => sneaker.brand === selected.innerText
+    );
+    sneakerGrid.innerHTML = "";
+    displaySneakers(brandFilter);
+  }
 });

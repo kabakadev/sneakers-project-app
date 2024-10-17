@@ -804,7 +804,7 @@ input[type="range"]::-moz-range-thumb {
   top: 3em;
   left: 50%;
   width: 100%;
-  transform: translate((-50%));
+  transform: translateX(-50%);
   opacity: 0;
   transition: 0.2s;
   z-index: 1;
@@ -822,7 +822,7 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .active {
-  background: #ddd;
+  background: #f00;
 }
 
 .menu-open {
