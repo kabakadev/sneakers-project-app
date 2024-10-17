@@ -117,7 +117,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "mt-4"
     );
 
+    details.appendChild(brandModel);
+    details.appendChild(button);
+
     wishlistItem.appendChild(image);
+    wishlistItem.appendChild(details);
     wishlistGrid.appendChild(wishlistItem);
   }
   function filterSneakers() {
@@ -176,7 +180,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   showWishListSection.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(e);
     wishlist.classList.remove("hidden");
     home.classList.add("hidden");
   });
