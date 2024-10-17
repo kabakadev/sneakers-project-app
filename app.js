@@ -116,6 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
       "py-1",
       "mt-4"
     );
+    button.addEventListener("click", () => {
+      wishlistItem.remove();
+    });
 
     details.appendChild(brandModel);
     details.appendChild(button);
