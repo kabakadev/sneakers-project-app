@@ -797,6 +797,29 @@ input[type="range"]::-moz-range-thumb {
   left: 50%;
   width: 100%;
   transform: translate((-50%));
+  opacity: 0;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.menu li {
+  padding: 0.7em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background: #999;
+}
+
+.active {
+  background: #ddd;
+}
+
+.menu-open {
+  display: block;
+  opacity: 1;
 }
 
 @media (min-width: 640px) {
