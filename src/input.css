@@ -129,4 +129,13 @@ input[type="range"]::-moz-range-thumb {
 }
 .menu {
   list-style: none;
+  padding: 0.2em 0.5em;
+  background: #ddd;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  position: absolute;
+  top: 3em;
+  left: 50%;
+  width: 100%;
+  transform: translate((-50%));
 }
