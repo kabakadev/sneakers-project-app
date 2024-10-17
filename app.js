@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     caret.classList.toggle("caret-rotate");
     menu.classList.toggle("menu-open");
   });
-
+  //store sneakers here
   let sneakerData = [];
   console.log(rangePrices);
 
@@ -130,6 +130,12 @@ document.addEventListener("DOMContentLoaded", () => {
   //section
   const home = document.querySelector("#home-section");
   const wishlist = document.querySelector("#wishlist-section");
-  const showHomeSection = document.querySelector("[href=#]");
-  const showWishListSection = document.querySelector("[href=#wishlist]");
+  const showHomeSection = document.querySelector("a[href='#']");
+  const showWishListSection = document.querySelector("a[href='#wishlist']");
+
+  home.classList.remove("hidden");
+  showHomeSection.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(e);
+  });
 });
