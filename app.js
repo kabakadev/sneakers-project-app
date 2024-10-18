@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const baseUrl = "https://json-db-lyjd.onrender.com/sneakers";
   let sneakerGrid = document.querySelector("#sneaker-grid");
 
   const priceInput = document.querySelectorAll(".price-input input");
@@ -30,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let sneakerData = [];
   let wishlistItem = [];
 
-  fetch("http://localhost:3000/sneakers")
+  fetch(`${baseUrl}`)
     .then((res) => res.json())
     .then((data) => {
       sneakerData = data;
