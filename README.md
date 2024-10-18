@@ -4,6 +4,8 @@ This is a single-page Sneaker Showcase application that displays a collection of
 
 **Click on the sneaker Image to view more info about the specific sneaker!**
 
+Open the live website on your preferred browser [here](https://kabakadev.github.io/sneakers-project-app/)
+
 ## Features
 - Display a collection of sneakers in a grid layout.
 - Filter sneakers by price range using input values.
