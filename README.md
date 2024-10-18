@@ -1,5 +1,9 @@
 # Sneaker Showcase
 
+## Author
+Ian Kabaka
+
+##Description
 This is a single-page Sneaker Showcase application that displays a collection of sneakers. Users can filter sneakers by price range, view sneaker details, and add/remove sneakers from their wishlist.
 
 **Click on the sneaker Image to view more info about the specific sneaker!**
@@ -9,7 +13,7 @@ Open the live website on your preferred browser [here](https://kabakadev.github.
 ## Features
 - Display a collection of sneakers in a grid layout.
 - Filter sneakers by price range using input values.
-- Filter sneakers by brand. (such as Adidas,Nike and Puma).
+- Filter sneakers by brand. (such as Adidas, Nike and Puma).
 - Add or remove sneakers from the wishlist, with the ability to dynamically update the button color to indicate wishlist status.
 - View sneaker details by clicking on an image.
 
