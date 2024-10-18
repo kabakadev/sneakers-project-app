@@ -3,7 +3,7 @@
 ## Author
 Ian Kabaka
 
-##Description
+## Description
 This is a single-page Sneaker Showcase application that displays a collection of sneakers. Users can filter sneakers by price range, view sneaker details, and add/remove sneakers from their wishlist.
 
 **Click on the sneaker Image to view more info about the specific sneaker!**
