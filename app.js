@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const caret = dropDown.querySelector(".caret");
   const menu = dropDown.querySelector(".menu");
   const options = dropDown.querySelectorAll(".menu li");
+
+  //used in filtering and dropdown
   const selected = dropDown.querySelector(".selected");
 
   //sneakersection
@@ -34,9 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
       sneakerData = data;
       displaySneakers(sneakerData);
     });
-
+  //function to get sneaker objects and display to the DOM
   function displaySneakers(sneakers) {
     sneakers.forEach((sneaker) => {
+      //sneakerItem is the div that contains all the elements
       const sneakerItem = document.createElement("div");
       sneakerItem.classList.add("border", "p-4", "rounded");
 
@@ -81,13 +84,14 @@ document.addEventListener("DOMContentLoaded", () => {
         "py-1",
         "mt-4"
       );
+      //Enables the user to click on an image and view the details of the sneaker,
       image.addEventListener("click", () => {
         sneakerSecDetails.classList.remove("hidden");
         wishlist.classList.add("hidden");
         home.classList.add("hidden");
         showSneakerDetails(sneaker);
       });
-
+      //calls the update wishlist function and changes the button to gray when an item added to wishlist,
       button.addEventListener("click", () => {
         const sneakerId = sneaker.id;
         if (!wishlistItem.includes(sneakerId)) {
@@ -112,6 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sneakerGrid.appendChild(sneakerItem);
     });
   }
+  //function for showing sneaker details and gets extra property from the server
   function showSneakerDetails(sneaker) {
     const sneakerSecImage = document.querySelector("#sneaker-image");
     const sneakerSecBrand = document.querySelector("#sneaker-brand");
@@ -121,22 +126,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const sneakerSecComment = document.querySelector("#text-content");
 
     sneakerSecImage.src = sneaker.image;
-    sneakerSecBrand.textContent = sneaker.brand;
+    sneakerSecBrand.textContent = `${sneaker.brand} - ${sneaker.model}`;
     sneakerSecColor.textContent = sneaker.color;
     sneakerSecSize.textContent = sneaker.size;
     sneakerSecPrice.textContent = `$${sneaker.price}`;
     sneakerSecComment.textContent = sneaker.comments;
   }
+  //function to update wishlist
   function updateWishlist(sneaker) {
     const wishlistGrid = document.getElementById("wishlit-grid");
-    // console.log(sneaker);
+
+    //wishitem is the div that contains the elements
     const wishItem = document.createElement("div");
     wishItem.classList.add("border", "p-4", "rounded");
 
     const image = document.createElement("img");
     image.src = sneaker.image;
     image.classList.add("w-full", "h-auto", "object-cover", "rounded");
-    console.log(image);
 
     const details = document.createElement("div");
     details.classList.add("mt-4", "flex", "flex-col", "items-center");
@@ -157,6 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
       "py-1",
       "mt-4"
     );
+
+    //removes item from wishlist and also from the wishlist array
     button.addEventListener("click", () => {
       wishItem.remove();
 
@@ -173,26 +181,31 @@ document.addEventListener("DOMContentLoaded", () => {
     wishItem.appendChild(details);
     wishlistGrid.appendChild(wishItem);
   }
+
+  //function to filter sneakers
   function filterSneakers() {
-    console.log(typeof priceInput[0].value);
+    //gets the values of the price from the input field
     const minPrice = parseInt(priceInput[0].value);
     const maxPrice = parseInt(priceInput[1].value);
 
     sneakerGrid.innerHTML = "";
 
+    //clears the grid and adds the sneake based on the filter price
     const filteredSneakers = sneakerData.filter(
       (sneaker) => sneaker.price >= minPrice && sneaker.price <= maxPrice
     );
     displaySneakers(filteredSneakers);
   }
 
+  //calls the filter function when the input values change
   priceInput.forEach((input) => {
     input.addEventListener("input", () => {
       filterSneakers();
     });
   });
+
+  //logic for filtering by brand
   function filterByBrand() {
-    console.log(selected.innerText);
     const brandFilter = sneakerData.filter(
       (sneaker) => sneaker.brand === selected.innerText
     );
@@ -200,6 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
     displaySneakers(brandFilter);
   }
 
+  //drop down menu logic when an option is clicked
   options.forEach((option) => {
     option.addEventListener("click", () => {
       selected.innerText = option.innerText;
@@ -214,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  //by deault shows the home page. home refers to the section, showHomeSection refers to the navigation
   home.classList.remove("hidden");
   showHomeSection.addEventListener("click", (e) => {
     e.preventDefault();
