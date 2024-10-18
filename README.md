@@ -2,7 +2,7 @@
 
 This is a single-page Sneaker Showcase application that displays a collection of sneakers. Users can filter sneakers by price range, view sneaker details, and add/remove sneakers from their wishlist.
 
-**Click on the Images to view more info about the specific sneaker!**
+**Click on the sneaker Image to view more info about the specific sneaker!**
 
 ## Features
 - Display a collection of sneakers in a grid layout.
