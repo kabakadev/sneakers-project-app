@@ -4,7 +4,8 @@ This is a single-page Sneaker Showcase application that displays a collection of
 
 ## Features
 - Display a collection of sneakers in a grid layout.
-- Filter sneakers by price range using a slider.
+- Filter sneakers by price range using input values.
+- Filter sneakers by brand. (such as Adidas,Nike and Puma).
 - Add or remove sneakers from the wishlist, with the ability to dynamically update the button color to indicate wishlist status.
 - View sneaker details by clicking on an image.
 
