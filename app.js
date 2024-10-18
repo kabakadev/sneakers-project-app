@@ -96,13 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
           button.classList.add("bg-gray-300");
           updateWishlist(sneaker);
           console.log("succeeded");
-        } else {
-          const index = wishlistItem.indexOf(sneakerId);
-          if (index !== -1) {
-            wishlistItem.splice(index, 1);
-            button.classList.remove("bg-gray-300");
-            button.classList.add("bg-blue-300");
-          }
         }
       });
 
@@ -125,16 +118,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const sneakerSecColor = document.querySelector("#sneaker-color");
     const sneakerSecSize = document.querySelector("#sneaker-size");
     const sneakerSecPrice = document.querySelector("#sneaker-price");
+    const sneakerSecComment = document.querySelector("#text-content");
 
-    if (!sneakerSecImage) {
-      console.error("sneakerSecImage element not found!");
-      return;
-    }
     sneakerSecImage.src = sneaker.image;
     sneakerSecBrand.textContent = sneaker.brand;
     sneakerSecColor.textContent = sneaker.color;
     sneakerSecSize.textContent = sneaker.size;
-    sneakerSecPrice.textContent = sneaker.price;
+    sneakerSecPrice.textContent = `$${sneaker.price}`;
+    sneakerSecComment.textContent = sneaker.comments;
   }
   function updateWishlist(sneaker) {
     const wishlistGrid = document.getElementById("wishlit-grid");
