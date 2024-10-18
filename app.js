@@ -92,12 +92,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const sneakerId = sneaker.id;
         if (!wishlistItem.includes(sneakerId)) {
           wishlistItem.push(sneakerId);
-          button.classList.remove("bg-blue-300", "pointer-cursor");
           button.classList.add("bg-gray-300");
           updateWishlist(sneaker);
           console.log("succeeded");
         } else {
-          button.classList.remove("pointer-cursor");
+          button.classList.add("bg-blue-300");
         }
       });
 
@@ -163,6 +162,11 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     button.addEventListener("click", () => {
       wishItem.remove();
+
+      let index = wishlistItem.indexOf(sneaker.id);
+      if (index !== -1) {
+        wishlistItem.splice(index, 1);
+      }
     });
 
     details.appendChild(brandModel);
