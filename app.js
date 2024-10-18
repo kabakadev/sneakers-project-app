@@ -99,11 +99,8 @@ document.addEventListener("DOMContentLoaded", () => {
           button.classList.remove("bg-blue-300");
           button.classList.add("bg-gray-300");
           updateWishlist(sneaker);
-          console.log("succeeded");
         }
       });
-
-      // sneakerItem.addEventListener("click");
 
       details.appendChild(brandModel);
       details.appendChild(color);
@@ -232,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
   home.classList.remove("hidden");
   showHomeSection.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(e);
+
     home.classList.remove("hidden");
     wishlist.classList.add("hidden");
     sneakerSecDetails.classList.add("hidden");
