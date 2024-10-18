@@ -92,11 +92,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const sneakerId = sneaker.id;
         if (!wishlistItem.includes(sneakerId)) {
           wishlistItem.push(sneakerId);
+          button.classList.remove("bg-blue-300");
           button.classList.add("bg-gray-300");
           updateWishlist(sneaker);
           console.log("succeeded");
         } else {
-          button.classList.add("bg-blue-300");
+          const index = wishlistItem.indexOf(sneakerId);
+          if (index !== -1) {
+            wishlistItem.splice(index, 1);
+            button.classList.remove("bg-gray-300");
+            button.classList.add("bg-blue-300");
+          }
         }
       });
 
