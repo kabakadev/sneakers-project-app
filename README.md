@@ -54,7 +54,7 @@ Technologies Used
 - JavaScript
 - JSON Server (for managing the sneaker collection data)
 
-Licence
+## License 
 MIT License
 
 Copyright &copy; 2024 Ian Kabaka
