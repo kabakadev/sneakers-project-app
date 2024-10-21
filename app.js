@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
         option.classList.remove("active");
       });
       option.classList.add("active");
-      filterByBrand();
+      filterSneakers();
     });
   });
 
