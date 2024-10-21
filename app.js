@@ -190,13 +190,13 @@ document.addEventListener("DOMContentLoaded", () => {
     sneakerGrid.innerHTML = "";
 
     //clears the grid and adds the sneake based on the filter price
-    const filteredSneakers = sneakerData.filter(
-      (sneaker) => {
-        const isWithinPriceRange = sneaker.price >= minPrice && sneaker.price <= maxPrice
-        const matchesBrand = selectedBrand === 'All' || sneaker.brand === selectedBrand
-        return isWithinPriceRange $$ matchesBrand
-      }
-    );
+    const filteredSneakers = sneakerData.filter((sneaker) => {
+      const isWithinPriceRange =
+        sneaker.price >= minPrice && sneaker.price <= maxPrice;
+      const matchesBrand =
+        selectedBrand === "All" || sneaker.brand === selectedBrand;
+      return isWithinPriceRange && matchesBrand;
+    });
     displaySneakers(filteredSneakers);
   }
 
@@ -206,15 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
       filterSneakers();
     });
   });
-
-  //logic for filtering by brand
-  function filterByBrand() {
-    const brandFilter = sneakerData.filter(
-      (sneaker) => sneaker.brand === selected.innerText
-    );
-    sneakerGrid.innerHTML = "";
-    displaySneakers(brandFilter);
-  }
 
   //drop down menu logic when an option is clicked
   options.forEach((option) => {
