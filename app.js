@@ -185,12 +185,17 @@ document.addEventListener("DOMContentLoaded", () => {
     //gets the values of the price from the input field
     const minPrice = parseInt(priceInput[0].value);
     const maxPrice = parseInt(priceInput[1].value);
+    const selectedBrand = selected.innerText;
 
     sneakerGrid.innerHTML = "";
 
     //clears the grid and adds the sneake based on the filter price
     const filteredSneakers = sneakerData.filter(
-      (sneaker) => sneaker.price >= minPrice && sneaker.price <= maxPrice
+      (sneaker) => {
+        const isWithinPriceRange = sneaker.price >= minPrice && sneaker.price <= maxPrice
+        const matchesBrand = selectedBrand === 'All' || sneaker.brand === selectedBrand
+        return isWithinPriceRange $$ matchesBrand
+      }
     );
     displaySneakers(filteredSneakers);
   }
