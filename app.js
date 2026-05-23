@@ -1,240 +1,277 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const baseUrl = "https://json-db-lyjd.onrender.com/sneakers";
-  let sneakerGrid = document.querySelector("#sneaker-grid");
+class SneakerApp {
+  constructor() {
+    this.apiUrl = "https://json-db-lyjd.onrender.com/sneakers";
+    this.sneakers = [];
+    this.wishlist = new Set();
+    this.filters = {
+      minPrice: 0,
+      maxPrice: 999,
+      brand: "All"
+    };
 
-  const priceInput = document.querySelectorAll(".price-input input");
-  //dropdown
-  const dropDown = document.querySelector(".dropdown");
-  const select = dropDown.querySelector(".select");
-  const caret = dropDown.querySelector(".caret");
-  const menu = dropDown.querySelector(".menu");
-  const options = dropDown.querySelectorAll(".menu li");
+    this.initializeElements();
+    this.setupEventListeners();
+    this.loadSneakers();
+  }
 
-  //used in filtering and dropdown
-  const selected = dropDown.querySelector(".selected");
+  initializeElements() {
+    this.elements = {
+      grid: document.getElementById("sneaker-grid"),
+      wishlistGrid: document.getElementById("wishlist-grid"),
+      homeSection: document.getElementById("home-section"),
+      wishlistSection: document.getElementById("wishlist-section"),
+      detailsModal: document.getElementById("details-modal"),
+      modalBackdrop: document.getElementById("modal-backdrop"),
+      priceMin: document.getElementById("price-min"),
+      priceMax: document.getElementById("price-max"),
+      brandSelect: document.getElementById("brand-select"),
+      navBtns: document.querySelectorAll(".nav-btn"),
+      closeModalBtn: document.getElementById("close-modal-btn"),
+      mobileMenuBtn: document.getElementById("mobile-menu-btn"),
+      mobileMenu: document.getElementById("mobile-menu"),
+      wishlistBadge: document.getElementById("wishlist-badge"),
+      clearFiltersBtn: document.getElementById("clear-filters-btn")
+    };
+  }
 
-  //sneakersection
-  const sneakerSecDetails = document.querySelector("#sneaker-details");
+  setupEventListeners() {
+    this.elements.priceMin.addEventListener("input", () => this.applyFilters());
+    this.elements.priceMax.addEventListener("input", () => this.applyFilters());
+    this.elements.brandSelect.addEventListener("change", () => this.applyFilters());
 
-  //section
-  const home = document.querySelector("#home-section");
-  const wishlist = document.querySelector("#wishlist-section");
-  const showHomeSection = document.querySelector("a[href='#']");
-  const showWishListSection = document.querySelector("a[href='#wishlist']");
-
-  select.addEventListener("click", () => {
-    select.classList.toggle("select-clicked");
-    caret.classList.toggle("caret-rotate");
-    menu.classList.toggle("menu-open");
-  });
-  //store sneakers here
-  let sneakerData = [];
-  let wishlistItem = [];
-
-  fetch(`${baseUrl}`)
-    .then((res) => res.json())
-    .then((data) => {
-      sneakerData = data;
-      displaySneakers(sneakerData);
+    this.elements.navBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => this.switchSection(e.target.dataset.section));
     });
-  //function to get sneaker objects and display to the DOM
-  function displaySneakers(sneakers) {
+
+    this.elements.closeModalBtn.addEventListener("click", () => this.closeModal());
+    this.elements.modalBackdrop.addEventListener("click", () => this.closeModal());
+    this.elements.mobileMenuBtn.addEventListener("click", () => this.toggleMobileMenu());
+    this.elements.clearFiltersBtn.addEventListener("click", () => this.resetFilters());
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") this.closeModal();
+    });
+  }
+
+  async loadSneakers() {
+    try {
+      this.elements.grid.innerHTML = '<div class="col-span-full flex items-center justify-center py-12"><div class="animate-pulse text-slate-400">Loading sneakers...</div></div>';
+
+      const response = await fetch(this.apiUrl);
+      if (!response.ok) throw new Error("Failed to load sneakers");
+
+      this.sneakers = await response.json();
+      this.renderSneakers(this.sneakers);
+    } catch (error) {
+      console.error("Error loading sneakers:", error);
+      this.elements.grid.innerHTML = '<div class="col-span-full text-center py-12 text-red-500">Failed to load sneakers. Please try again later.</div>';
+    }
+  }
+
+  renderSneakers(sneakers) {
+    this.elements.grid.innerHTML = "";
+
+    if (sneakers.length === 0) {
+      this.elements.grid.innerHTML = '<div class="col-span-full text-center py-12 text-slate-500">No sneakers found matching your filters.</div>';
+      return;
+    }
+
     sneakers.forEach((sneaker) => {
-      //sneakerItem is the div that contains all the elements
-      const sneakerItem = document.createElement("div");
-      sneakerItem.classList.add("border", "p-4", "rounded");
-
-      const image = document.createElement("img");
-      image.src = sneaker.image;
-      image.classList.add(
-        "w-full",
-        "h-auto",
-        "object-cover",
-        "rounded",
-        "cursor-pointer"
-      );
-
-      const details = document.createElement("div");
-      details.classList.add("mt-4", "flex", "flex-col", "items-center");
-
-      const brandModel = document.createElement("p");
-      brandModel.textContent = `${sneaker.brand} - ${sneaker.model}`;
-      brandModel.classList.add("font-bold", "text-lg", "text-center");
-
-      const color = document.createElement("p");
-      color.textContent = `Color: ${sneaker.color}`;
-      color.classList.add("text-sm", "text-gray-600", "text-center");
-
-      const size = document.createElement("p");
-      size.textContent = `Size: ${sneaker.size}`;
-      size.classList.add("text-sm", "text-gray-600", "text-center");
-
-      const price = document.createElement("p");
-      price.textContent = `Price: $${sneaker.price}`;
-      price.classList.add("text-sm", "text-center", "font-semibold");
-
-      const button = document.createElement("button");
-      button.textContent = "Wishlist";
-      button.classList.add(
-        "bg-blue-300",
-        "text-white",
-        "text-center",
-        "text-sm",
-        "rounded",
-        "px-2",
-        "py-1",
-        "mt-4"
-      );
-      //Enables the user to click on an image and view the details of the sneaker,
-      image.addEventListener("click", () => {
-        sneakerSecDetails.classList.remove("hidden");
-        wishlist.classList.add("hidden");
-        home.classList.add("hidden");
-        showSneakerDetails(sneaker);
-      });
-      //calls the update wishlist function and changes the button to gray when an item added to wishlist,
-      button.addEventListener("click", () => {
-        const sneakerId = sneaker.id;
-        if (!wishlistItem.includes(sneakerId)) {
-          wishlistItem.push(sneakerId);
-          button.classList.remove("bg-blue-300");
-          button.classList.add("bg-gray-300");
-          updateWishlist(sneaker);
-        }
-      });
-
-      details.appendChild(brandModel);
-      details.appendChild(color);
-      details.appendChild(size);
-      details.appendChild(price);
-      details.appendChild(button);
-
-      sneakerItem.appendChild(image);
-      sneakerItem.appendChild(details);
-      sneakerGrid.appendChild(sneakerItem);
+      const card = this.createSneakerCard(sneaker);
+      this.elements.grid.appendChild(card);
     });
   }
-  //function for showing sneaker details and gets extra property from the server
-  function showSneakerDetails(sneaker) {
-    const sneakerSecImage = document.querySelector("#sneaker-image");
-    const sneakerSecBrand = document.querySelector("#sneaker-brand");
-    const sneakerSecColor = document.querySelector("#sneaker-color");
-    const sneakerSecSize = document.querySelector("#sneaker-size");
-    const sneakerSecPrice = document.querySelector("#sneaker-price");
-    const sneakerSecComment = document.querySelector("#text-content");
 
-    sneakerSecImage.src = sneaker.image;
-    sneakerSecBrand.textContent = `${sneaker.brand} - ${sneaker.model}`;
-    sneakerSecColor.textContent = sneaker.color;
-    sneakerSecSize.textContent = sneaker.size;
-    sneakerSecPrice.textContent = `$${sneaker.price}`;
-    sneakerSecComment.textContent = sneaker.comments;
+  createSneakerCard(sneaker) {
+    const card = document.createElement("div");
+    card.className = "sneaker-card";
+
+    const isInWishlist = this.wishlist.has(sneaker.id);
+
+    card.innerHTML = `
+      <img src="${sneaker.image}" alt="${sneaker.brand} ${sneaker.model}" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+      <div class="sneaker-card-content">
+        <h3 class="sneaker-card-title">${sneaker.brand} ${sneaker.model}</h3>
+        <div class="sneaker-card-meta">
+          <p class="text-xs text-slate-500">${sneaker.color} • Size ${sneaker.size}</p>
+        </div>
+        <div class="sneaker-card-footer">
+          <span class="sneaker-price">$${sneaker.price}</span>
+          <button class="wishlist-btn px-3 py-1 rounded-lg text-sm font-medium transition-all duration-200 ${
+            isInWishlist
+              ? "bg-red-100 text-red-600 hover:bg-red-200"
+              : "bg-blue-100 text-blue-600 hover:bg-blue-200"
+          }">
+            ${isInWishlist ? "♥" : "🤍"}
+          </button>
+        </div>
+      </div>
+    `;
+
+    const img = card.querySelector("img");
+    img.addEventListener("click", () => this.showDetails(sneaker));
+
+    const wishlistBtn = card.querySelector(".wishlist-btn");
+    wishlistBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      this.toggleWishlist(sneaker);
+      this.updateWishlistUI();
+    });
+
+    return card;
   }
-  //function to update wishlist
-  function updateWishlist(sneaker) {
-    const wishlistGrid = document.getElementById("wishlit-grid");
 
-    //wishitem is the div that contains the elements
-    const wishItem = document.createElement("div");
-    wishItem.classList.add("border", "p-4", "rounded");
+  showDetails(sneaker) {
+    document.getElementById("modal-image").src = sneaker.image;
+    document.getElementById("modal-brand").textContent = `${sneaker.brand} ${sneaker.model}`;
+    document.getElementById("modal-model").textContent = `${sneaker.color} • Size ${sneaker.size}`;
+    document.getElementById("modal-color").textContent = sneaker.color;
+    document.getElementById("modal-size").textContent = sneaker.size;
+    document.getElementById("modal-price").textContent = `$${sneaker.price}`;
+    document.getElementById("modal-comments").textContent = sneaker.comments || "No description available.";
 
-    const image = document.createElement("img");
-    image.src = sneaker.image;
-    image.classList.add("w-full", "h-auto", "object-cover", "rounded");
+    const btn = document.getElementById("modal-wishlist-btn");
+    if (this.wishlist.has(sneaker.id)) {
+      btn.textContent = "Remove from Wishlist";
+      btn.classList.remove("from-blue-600", "to-cyan-600");
+      btn.classList.add("from-red-600", "to-red-500");
+    } else {
+      btn.textContent = "Add to Wishlist";
+      btn.classList.remove("from-red-600", "to-red-500");
+      btn.classList.add("from-blue-600", "to-cyan-600");
+    }
 
-    const details = document.createElement("div");
-    details.classList.add("mt-4", "flex", "flex-col", "items-center");
+    btn.onclick = () => {
+      this.toggleWishlist(sneaker);
+      this.updateWishlistUI();
+      this.showDetails(sneaker);
+    };
 
-    const brandModel = document.createElement("p");
-    brandModel.textContent = `${sneaker.brand} - ${sneaker.model}`;
-    brandModel.classList.add("font-bold", "text-lg", "text-center");
+    this.elements.detailsModal.classList.remove("hidden");
+  }
 
-    const button = document.createElement("button");
-    button.textContent = "Remove";
-    button.classList.add(
-      "bg-red-300",
-      "text-white",
-      "text-center",
-      "text-sm",
-      "rounded",
-      "px-2",
-      "py-1",
-      "mt-4"
-    );
+  closeModal() {
+    this.elements.detailsModal.classList.add("hidden");
+  }
 
-    //removes item from wishlist and also from the wishlist array
-    button.addEventListener("click", () => {
-      wishItem.remove();
+  toggleWishlist(sneaker) {
+    if (this.wishlist.has(sneaker.id)) {
+      this.wishlist.delete(sneaker.id);
+    } else {
+      this.wishlist.add(sneaker.id);
+    }
+    localStorage.setItem("wishlist", JSON.stringify(Array.from(this.wishlist)));
+  }
 
-      let index = wishlistItem.indexOf(sneaker.id);
-      if (index !== -1) {
-        wishlistItem.splice(index, 1);
+  updateWishlistUI() {
+    this.elements.wishlistBadge.textContent = this.wishlist.size;
+    this.wishlist.size > 0
+      ? this.elements.wishlistBadge.classList.remove("hidden")
+      : this.elements.wishlistBadge.classList.add("hidden");
+
+    this.renderWishlist();
+    this.renderSneakers(this.getFilteredSneakers());
+  }
+
+  renderWishlist() {
+    this.elements.wishlistGrid.innerHTML = "";
+
+    if (this.wishlist.size === 0) {
+      this.elements.wishlistGrid.innerHTML = '<div class="col-span-full text-center py-12 text-slate-500">Your wishlist is empty. Add some sneakers!</div>';
+      return;
+    }
+
+    const wishlistSneakers = this.sneakers.filter((s) => this.wishlist.has(s.id));
+    wishlistSneakers.forEach((sneaker) => {
+      const card = document.createElement("div");
+      card.className = "sneaker-card";
+
+      card.innerHTML = `
+        <img src="${sneaker.image}" alt="${sneaker.brand} ${sneaker.model}" class="w-full h-48 object-cover">
+        <div class="sneaker-card-content">
+          <h3 class="sneaker-card-title">${sneaker.brand} ${sneaker.model}</h3>
+          <div class="sneaker-card-meta">
+            <p class="text-xs text-slate-500">${sneaker.color} • Size ${sneaker.size}</p>
+          </div>
+          <div class="sneaker-card-footer mt-auto">
+            <span class="sneaker-price">$${sneaker.price}</span>
+            <button class="remove-btn px-3 py-1 bg-red-100 text-red-600 rounded-lg text-sm font-medium hover:bg-red-200 transition-all">
+              Remove
+            </button>
+          </div>
+        </div>
+      `;
+
+      card.querySelector(".remove-btn").addEventListener("click", () => {
+        this.toggleWishlist(sneaker);
+        this.updateWishlistUI();
+      });
+
+      this.elements.wishlistGrid.appendChild(card);
+    });
+  }
+
+  applyFilters() {
+    this.filters.minPrice = parseInt(this.elements.priceMin.value) || 0;
+    this.filters.maxPrice = parseInt(this.elements.priceMax.value) || 999;
+    this.filters.brand = this.elements.brandSelect.value;
+
+    this.renderSneakers(this.getFilteredSneakers());
+  }
+
+  getFilteredSneakers() {
+    return this.sneakers.filter((sneaker) => {
+      const priceMatch =
+        sneaker.price >= this.filters.minPrice && sneaker.price <= this.filters.maxPrice;
+      const brandMatch =
+        this.filters.brand === "All" || sneaker.brand === this.filters.brand;
+      return priceMatch && brandMatch;
+    });
+  }
+
+  resetFilters() {
+    this.elements.priceMin.value = 0;
+    this.elements.priceMax.value = 999;
+    this.elements.brandSelect.value = "All";
+    this.applyFilters();
+  }
+
+  switchSection(section) {
+    this.elements.navBtns.forEach((btn) => btn.classList.remove("active"));
+    document.querySelector(`[data-section="${section}"]`).classList.add("active");
+
+    this.elements.homeSection.classList.add("hidden");
+    this.elements.wishlistSection.classList.add("hidden");
+    this.elements.detailsModal.classList.add("hidden");
+
+    if (section === "home") {
+      this.elements.homeSection.classList.remove("hidden");
+    } else if (section === "wishlist") {
+      this.elements.wishlistSection.classList.remove("hidden");
+      this.renderWishlist();
+    }
+
+    this.elements.mobileMenu.classList.add("hidden");
+  }
+
+  toggleMobileMenu() {
+    this.elements.mobileMenu.classList.toggle("hidden");
+  }
+
+  loadWishlistFromStorage() {
+    const stored = localStorage.getItem("wishlist");
+    if (stored) {
+      this.wishlist = new Set(JSON.parse(stored));
+      this.elements.wishlistBadge.textContent = this.wishlist.size;
+      if (this.wishlist.size > 0) {
+        this.elements.wishlistBadge.classList.remove("hidden");
       }
-    });
-
-    details.appendChild(brandModel);
-    details.appendChild(button);
-
-    wishItem.appendChild(image);
-    wishItem.appendChild(details);
-    wishlistGrid.appendChild(wishItem);
+    }
   }
+}
 
-  //function to filter sneakers
-  function filterSneakers() {
-    //gets the values of the price from the input field
-    const minPrice = parseInt(priceInput[0].value);
-    const maxPrice = parseInt(priceInput[1].value);
-    const selectedBrand = selected.innerText;
-
-    sneakerGrid.innerHTML = "";
-
-    //clears the grid and adds the sneake based on the filter price
-    const filteredSneakers = sneakerData.filter((sneaker) => {
-      const isWithinPriceRange =
-        sneaker.price >= minPrice && sneaker.price <= maxPrice;
-      const matchesBrand =
-        selectedBrand === "All" || sneaker.brand === selectedBrand;
-      return isWithinPriceRange && matchesBrand;
-    });
-    displaySneakers(filteredSneakers);
-  }
-
-  //calls the filter function when the input values change
-  priceInput.forEach((input) => {
-    input.addEventListener("input", () => {
-      filterSneakers();
-    });
-  });
-
-  //drop down menu logic when an option is clicked
-  options.forEach((option) => {
-    option.addEventListener("click", () => {
-      selected.innerText = option.innerText;
-      select.classList.remove("select-clicked");
-      caret.classList.remove("caret-rotate");
-      menu.classList.remove("menu-open");
-      options.forEach((option) => {
-        option.classList.remove("active");
-      });
-      option.classList.add("active");
-      filterSneakers();
-    });
-  });
-
-  //by deault shows the home page. home refers to the section, showHomeSection refers to the navigation
-  home.classList.remove("hidden");
-  showHomeSection.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    home.classList.remove("hidden");
-    wishlist.classList.add("hidden");
-    sneakerSecDetails.classList.add("hidden");
-  });
-  showWishListSection.addEventListener("click", (e) => {
-    e.preventDefault();
-    wishlist.classList.remove("hidden");
-    home.classList.add("hidden");
-    sneakerSecDetails.classList.add("hidden");
-  });
+document.addEventListener("DOMContentLoaded", () => {
+  const app = new SneakerApp();
+  app.loadWishlistFromStorage();
+  app.updateWishlistUI();
 });
